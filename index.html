@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <script src="javascript.js" defer></script>
+
+    <title>Library</title>
+</head>
+<body>
+    <header class="header">
+        <h2 class="first-title">Welcome to the library!</h2>
+        <h2>Let's read some books!</h2>
+    </header>
+    <div class="main-container">
+        <main class="main">
+            <div class="main-text">Add or remove a book</div>
+            <div class="book-container">
+    
+                <!-- <div class="book">
+                    <button class="close"><span>X</span></button>
+                    <div class="title-container">Title: The Hobbit</div>
+                    <div class="author-container">Author: <span class="author">JK Smith</span></div>
+                    <div class="page-container">123 pages</div>
+                    <div class="read-container">
+                        <button type="button">Finished</button>
+                    </div>
+                </div> -->
+    
+            </div>
+            <div class="button-container">
+                <button type="button" class="add">Add</button>
+            </div>
+        </main>
+    </div>
+    <div class="overlay"></div>
+    <div class="modal">
+        <h1 class="add-book-text">Add a book</h1>
+        <div class="add-book">
+            <label for="add-title"><span>Title: </span> 
+                <input type="text" name="add-title" id="add-title">
+            </label>
+            <label for="add-author"><span>Author: </span>
+                <input type="text" name="add-author" id="add-author">
+            </label>
+            <label for="add-page"><span>Page: </span>
+                <input type="text" name="add-page" id="add-page">
+            </label>
+            <label for="add-readOrNot" class="add-readOrNot"><span>Finished: </span>
+                <label for="readYes" id="readYesLabel">Yes
+                    <input type="radio" name="add-readOrNot" id="readYes" value="yes">
+                </label>
+               <label for="readNo" id="readNoLabel">No
+                <input type="radio" name="add-readOrNot" id="readNo" value="no" checked>
+               </label>
+            </label>
+            <button type="button" class="add-book-button">Add Book</button>
+        </div>
+    </div>
+    <footer class="footer">@Davidmagar2023</footer>
+</body>
+</html>

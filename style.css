@@ -1,0 +1,242 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background-image: conic-gradient(#2e035f 45deg, #2053fa, #84b5ff, #e9fcff);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex-grow: 1;
+    margin: 3rem 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    width: 100%;
+    text-align: center;
+    padding: 0 1rem 0;
+    background-color: #ffffff;
+}
+
+.main-text {
+    margin: 10px 0;
+    text-shadow: 0px 1px 1px #0000ff;
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.book {
+    padding: 20px;
+    min-height: 60px;
+    border-radius: 10px;
+    background: linear-gradient(#d8e8ffdc 60%, #6c0dd8);
+    position: relative;
+}
+
+.book > div {
+    border-radius: 4px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.book button {
+    all:unset;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.title-container {
+    background-color: #ffb5b536;
+    box-shadow: 0px 2px 4px red;
+}
+
+.author-container {
+    background-color: #b0b0ff36;
+    box-shadow: 0px 2px 4px blue;
+}
+
+.page-container {
+    background-color: #abffab36;
+    box-shadow: 0px 2px 4px green;
+}
+
+.book > .read-container {
+    margin-bottom: 0;
+}
+
+.add-book-button,
+.button-container button{
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 4px 6px darkblue;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 5px;
+    margin: 12px 0;
+}
+
+.header,
+.footer {
+    width: 100%;
+    padding: 0.25rem;
+    text-align: center;
+    background-color: #ffffff;
+    text-shadow: 0px 1px 1px #0000ff;
+}
+
+.first-title {
+    font-size: 1.75rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #0000008e;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    background: linear-gradient(#ffffff 75%, #650cca);
+    border-radius: 4px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    display: flex;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 100ms transform ease-out;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.add-book-text {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.add-book {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.add-book label {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.add-book input {
+    background-color: #ffff;
+    border: none;
+    outline: none;
+    width: 65%;
+}
+
+.add-book-button {
+    margin: 0 auto;
+}
+
+.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 250ms transform ease-out;
+}
+
+.add-readOrNot input[type="radio"] {
+    cursor: pointer;
+    width: calc(65%/2);
+    height: 0;
+    visibility: hidden;
+}
+
+#readYes::before,
+#readNo::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    border: 0.4rem solid black;
+    display: inline-block;
+    visibility: visible;
+}
+
+#readYes:checked::before,
+#readNo:checked::before {
+    background-color: #000000c9;
+}
+
+body .close {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    top: 2.5%;
+    right: 2.5%;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.finished {
+    text-decoration: line-through;
+}
+
+@media only screen and (max-width: 1000px) {
+    * {
+        font-size: 16px;
+    }
+
+    .modal {
+        min-width: 90%;
+    }
+
+    .add-book-input {
+        width: min(60%, 15rem);
+    }
+
+    .book-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    * {
+        font-size: 15px;
+    }
+
+    .modal{
+        padding: 1rem;
+    }
+
+    .book-container {
+        grid-template-columns: 1fr;
+    }
+}
